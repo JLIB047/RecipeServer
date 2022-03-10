@@ -41,7 +41,7 @@ app.use(express.json);
  //});
 
 // db('open',  () => {
-//     app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+     app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
 //     console.log(`GraphQL server readt at http://localhost:${PORT}${server.graphqlPath}`);
 // });
 };
