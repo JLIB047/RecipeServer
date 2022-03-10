@@ -28,7 +28,7 @@
 // });
 
 const {MongoClient} = require ('mongodb'); 
-const ApolloServer = require ('apollo-server');
+const {ApolloServer} = require ('apollo-server');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
