@@ -8,7 +8,7 @@ const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
 const mongoose = require('mongoose');
 
-const db = mongoose.connect(process.env.MONGODB_URI, {
+const db = async () => await mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 //   useCreateIndex: true,
