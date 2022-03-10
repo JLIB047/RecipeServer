@@ -6,7 +6,14 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
+const mongoose = require('mongoose');
+
+const db = await mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 
 const PORT = process.env.PORT || 3001;
