@@ -8,7 +8,7 @@ const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
 const mongoose = require('mongoose');
 
-const db = async () => await mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -40,10 +40,10 @@ app.use(express.json);
    // res.sendFile(path.join(__dirname, '../client/build/index.html'));
  //});
 
-db.once('open',  () => {
-    app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
-    console.log(`GraphQL server readt at http://localhost:${PORT}${server.graphqlPath}`);
-});
+// db('open',  () => {
+//     app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+//     console.log(`GraphQL server readt at http://localhost:${PORT}${server.graphqlPath}`);
+// });
 };
 
 startServer();
