@@ -27,8 +27,8 @@
 //   });
 // });
 
-import {MongoClient, Db, Collection} from 'mongodb'; 
-import ApolloServer from 'apollo-server';
+const {MongoClient} = require ('mongodb'); 
+const ApolloServer = require ('apollo-server');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
