@@ -19,7 +19,6 @@ const db = mongoose.connect(process.env.MONGODB_URI, {
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const startServer = async () => {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
@@ -44,6 +43,5 @@ app.use(express.json);
      app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
 //     console.log(`GraphQL server readt at http://localhost:${PORT}${server.graphqlPath}`);
  });
-};
 
-startServer();
+
